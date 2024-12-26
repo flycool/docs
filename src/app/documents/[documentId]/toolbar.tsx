@@ -27,6 +27,7 @@ import {
   UnderlineIcon,
   Undo2Icon,
   UploadIcon,
+  MinusIcon,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -43,10 +44,11 @@ import {
 } from "@/components/ui/dialog";
 import { type Level } from "@tiptap/extension-heading";
 import { type ColorResult, CirclePicker } from "react-color";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import TextAlign from "@tiptap/extension-text-align";
+import FontSizeButton from "@/extensions/FontSizeButton";
 
 const ListButton = () => {
   const { editor } = useEditorStore();
@@ -543,6 +545,8 @@ export default function Toolbar() {
       <FontFamilyButton />
       <Separator orientation="vertical" className="h-6 bg-neutral-300" />
       <HeadingLevelButton />
+      <Separator orientation="vertical" className="h-6 bg-neutral-300" />
+      <FontSizeButton />
       <Separator orientation="vertical" className="h-6 bg-neutral-300" />
       {sections[1].map((item) => (
         <ToolbarButton key={item.label} {...item} />
