@@ -1,5 +1,4 @@
 "use client";
-import { rule } from "postcss";
 import React, { useRef, useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
 
