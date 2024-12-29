@@ -27,7 +27,6 @@ import {
   UnderlineIcon,
   Undo2Icon,
   UploadIcon,
-  MinusIcon,
   ListCollapseIcon,
 } from "lucide-react";
 import {
@@ -48,7 +47,6 @@ import { type ColorResult, CirclePicker } from "react-color";
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import TextAlign from "@tiptap/extension-text-align";
 import FontSizeButton from "@/extensions/FontSizeButton";
 
 const LineHeightButton = () => {
@@ -474,7 +472,7 @@ const FontFamilyButton = () => {
 interface ToolbarButtonProps {
   onClick?: () => void;
   isActive?: boolean;
-  icon?: LucideIcon;
+  icon: LucideIcon;
 }
 
 const ToolbarButton = ({
