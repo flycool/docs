@@ -20,7 +20,7 @@ export default function TemplatesGallery() {
   const create = useMutation(api.documents.create);
   const [isCreating, setIsCreating] = useState(false);
 
-  const onTemplateClick = (title: string, initialContent: string) => {
+  const onTemplateClick = (title: string, initialContent: string = "") => {
     setIsCreating(true);
     create({ title, initialContent })
       .catch(() => toast.error("Something went wrong"))
@@ -52,7 +52,9 @@ export default function TemplatesGallery() {
                 >
                   <button
                     disabled={isCreating}
-                    onClick={() => onTemplateClick(template.label, "")}
+                    onClick={() =>
+                      onTemplateClick(template.label, template.initialContent)
+                    }
                     style={{
                       backgroundImage: `url(${template.imageUrl})`,
                       backgroundSize: "cover",
